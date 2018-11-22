@@ -19,7 +19,7 @@
 <script>
 export default {};
 </script>
-<style <style scoped>
+<style scoped>
  .navbar-brand {
      color: white;
  }
