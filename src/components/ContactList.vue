@@ -8,7 +8,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
-                <th></th>
+                
             </thead>
             <tbody>
                 <tr v-for="(contact, index) in contacts" :key="index">
@@ -17,7 +17,7 @@
                     <td>{{contact.lastName}}</td>
                     <td>{{contact.email}}</td>
                     <td>
-                        <button @click="removeContact(contact)" >Remove</button>
+                        <button class="btn btn-danger" @click="removeContact(contact)" >Remove</button>
                     </td>
                 </tr>
             </tbody>
