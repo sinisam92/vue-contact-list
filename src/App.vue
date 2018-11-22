@@ -2,11 +2,15 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ContactList/>
-    <BlogPost 
+    <NavBar/>
+    <!-- <ContactList/> -->
+    <!-- <BlogPost 
     :title="parentTitle"
     @callParentFunction="parentFunction"
-    />
+    /> -->
+    
+
+  <router-view></router-view>
 
   </div>
 </template>
@@ -15,13 +19,15 @@
 import HelloWorld from './components/HelloWorld.vue'
 import ContactList from './components/ContactList.vue'
 import BlogPost from './components/BlogPost.vue'
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
     ContactList,
-    BlogPost
+    BlogPost,
+    NavBar
   },
   data() {
     return {
