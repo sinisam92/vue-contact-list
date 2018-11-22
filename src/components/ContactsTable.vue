@@ -12,10 +12,18 @@
             <tbody>
                 <tr v-for="(contact, index) in contactsList" :key="index">
                     <td>{{index + 1}}</td>
-                    <td>{{contact.firstName}}</td>
-                    <td>{{contact.lastName}}</td>
-                    <td>{{contact.email}}</td>
                     <td>
+                    <router-link :to="{name: 'contact-details', params: {id: contact.id}}" >
+                        {{contact.firstName}}
+                    </router-link>
+                    </td>
+                    <td>
+                    <router-link :to="{name: 'contact-details', params: {id: contact.id}}" >
+                        {{contact.lastName}}
+                    </router-link>
+                    
+                    <td>{{contact.email}}</td>
+                    
                         <button class="btn btn-danger" @click="removeContact(contact)" >Remove</button>
                     </td>
                 </tr>

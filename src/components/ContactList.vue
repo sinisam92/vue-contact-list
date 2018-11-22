@@ -11,16 +11,18 @@
             <input v-model="newContact.email" type="text"  placeholde="Email"><br>
             <button type="submit">ADD CONTACT</button>
         </form>
-
+    <ContactDetails :contact="routeContact"/>
     </div>
     
 </template>
 
 <script>
 import ContactsTable from './ContactsTable'
+import ContactDetails from './ContactDetails'
     export default {
         components: {
-            ContactsTable
+            ContactsTable,
+            ContactDetails
         },
         data() {
             return {
@@ -30,11 +32,11 @@ import ContactsTable from './ContactsTable'
                     email: ''
                 },
                 contacts: [
-                    {firstName: 'John', lastName: 'Doe', email: 'john@example.com'},
-                    {firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com'},
-                    {firstName: 'Jack', lastName: 'Doe', email: 'jack@example.com'},
-                    {firstName: 'Sinisa', lastName: 'Doe', email: 'sinisa@example.com'},
-                    {firstName: 'Jasnima', lastName: 'Doe', email: 'jasmina@example.com'}
+                    {id: 1, firstName: 'John', lastName: 'Doe', email: 'john@example.com'},
+                    {id: 2, firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com'},
+                    {id: 3, firstName: 'Jack', lastName: 'Doe', email: 'jack@example.com'},
+                    {id: 4, firstName: 'Sinisa', lastName: 'Doe', email: 'sinisa@example.com'},
+                    {id: 5, firstName: 'Jasnima', lastName: 'Doe', email: 'jasmina@example.com'}
                 ],
                 
             };
@@ -51,6 +53,12 @@ import ContactsTable from './ContactsTable'
                 console.log(index);
                 
             }
+        },
+        computed: {
+            routeContact() {
+                return this.contacts.find(contact => contact.id == this.$route.params.id)
+            }
+            
         }
     };
 
