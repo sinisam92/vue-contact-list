@@ -1,5 +1,6 @@
 <template>
     <div>
+    <ContactDetails :contact="routeContact"/>
         <ContactsTable :contactsList="contacts"/>
      <h2>Add contact</h2>
         <form @submit.prevent="addContact">
@@ -11,7 +12,7 @@
             <input v-model="newContact.email" type="text"  placeholde="Email"><br>
             <button type="submit">ADD CONTACT</button>
         </form>
-    <ContactDetails :contact="routeContact"/>
+  
     </div>
     
 </template>
@@ -45,21 +46,16 @@ import ContactDetails from './ContactDetails'
             addContact() {
                 this.contacts.push(this.newContact);
                 this.newContact = {};
-        
             },
-            removeContact(contact) {
-                let index = this.contacts.indexOf(contact);
-                this.contacts.splice(index, 1);
-                console.log(index);
-                
-            }
+            
         },
         computed: {
             routeContact() {
                 return this.contacts.find(contact => contact.id == this.$route.params.id)
-            }
-            
+            }  
         }
+        
+        
     };
 
 </script>

@@ -20,6 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import ContactList from './components/ContactList.vue'
 import BlogPost from './components/BlogPost.vue'
 import NavBar from './components/NavBar.vue'
+import ContactDetails from './components/ContactDetails.vue'
 
 export default {
   name: 'app',
@@ -27,7 +28,8 @@ export default {
     HelloWorld,
     ContactList,
     BlogPost,
-    NavBar
+    NavBar,
+    ContactDetails
   },
   data() {
     return {
